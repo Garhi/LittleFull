@@ -1,0 +1,88 @@
+/* === FAQ Section === */
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border: 1px solid #ccc;
+    /* 根據設計稿，你可能有不同的邊框樣式 */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background-color: white;
+    /* 讓背景是白的 */
+    color: var(--text-color);
+}
+
+/* 1. 針對可點擊的區域 <summary> 做樣式 */
+.faq-question {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    display: flex;
+    /* 使用 Flexbox 來對齊文字和圖示 */
+    justify-content: space-between;
+    /* 讓文字和圖示分開在兩端 */
+    align-items: center;
+
+    /* 隱藏瀏覽器預設的箭頭圖示 */
+    list-style: none;
+}
+
+/* for Chrome/Safari */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+/* 2. 控制 +/- 圖示的顯示/隱藏 */
+.faq-icon {
+    width: 20px;
+    /* 設定你圖示的尺寸 */
+    height: 20px;
+}
+
+.faq-item .minus {
+    display: none;
+    /* 預設情況下，減號圖示是隱藏的 */
+}
+
+/* 當 <details> 標籤是 [open] 狀態時... */
+.faq-item[open] .minus {
+    display: inline;
+    /* ...顯示減號圖示 */
+}
+
+.faq-item[open] .plus {
+    display: none;
+    /* ...隱藏加號圖示 */
+}
+
+/* 讓 <summary> 在打開時也有不同樣式 */
+.faq-item[open] summary {
+    font-weight: bold;
+    /* border-bottom: 1px solid #eee; */
+    /* 可選：打開時加一條底線 */
+}
+
+
+.faq-answer {
+    overflow: hidden;
+    height: 0;
+    /* 改用 height: 0 */
+    transition: height 0.5s ease;
+    padding: 0 1.5rem;
+}
+
+/* 當 <details> 是 [open] 狀態時... */
+.faq-item[open] .faq-answer {
+    /* 打開狀態：網格的行高為 1fr，它會自動撐開到內容所需的高度 */
+    grid-template-rows: 1fr;
+}
+
+/* 為了讓動畫生效，grid 容器內的內容需要設定 overflow: hidden */
+.faq-answer>p {
+    overflow: hidden;
+}
