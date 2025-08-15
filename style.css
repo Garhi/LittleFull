@@ -315,7 +315,7 @@ a {
 }
 
 #feedback .container {
-    width: 80%;
+    width: 90%;
     padding: 32px 0px;
 }
 
@@ -323,7 +323,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 40px 16px;
+    margin: 80px 16px 40px 16px;
 }
 
 .testimonial-card {
@@ -402,6 +402,10 @@ a {
 
 .faq-question::-webkit-details-marker {
     display: none;
+}
+
+.faq-question span {
+    margin-right: 0.5rem;
 }
 
 .faq-icon {
@@ -558,13 +562,15 @@ a {
 
 .main-footer .logo {
     color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
 .footer-about p {
-    margin: 1rem 0;
+    margin: 1rem 0.5rem;
 }
 
 .social-links a {
+    margin-left: 0.5rem;
     margin-right: 15px;
     font-size: 1.2rem;
 }
@@ -600,9 +606,8 @@ a {
 .footer-bottom {
     text-align: center;
     padding: 20px 0;
-    margin-top: 40px;
-    border-top: 1px solid #444;
-    font-size: 0.9rem;
+    margin-top: 24px;
+    font-size: 1rem;
 }
 
 /* --- 電腦版樣式 (Desktop) --- */
@@ -738,13 +743,19 @@ a {
     #feedback {
         background-image: linear-gradient(to bottom, rgba(245, 243, 239, 0.8), rgba(245, 243, 239, 0.7)),
             url('./img/love.jpg');
-        padding: 60px 100px;
+        padding: 100px 80px;
     }
 
     .testimonials-grid {
         flex-direction: row;
-        gap: 30px;
-        padding-top: 2rem;
+        gap: 40px;
+    }
+
+    .testimonial-card {
+        width: 32%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     /* CTA Section */
